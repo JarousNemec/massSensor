@@ -2,7 +2,7 @@
 #include "../lib/HX711-0.1/HX711.h"
 
 ///main program
-#define calibration_factor -9820.0 //This value is obtained using the SparkFun_HX711_Calibration sketch
+#define calibration_factor 11900 //This value is obtained using the SparkFun_HX711_Calibration sketch
 #define DOUT 3
 #define CLK 2
 HX711 scale(DOUT, CLK);
@@ -27,7 +27,7 @@ void loop() {
 //#define DOUT 3
 //#define CLK 2
 //HX711 scale(DOUT, CLK);
-//float calibration_factor = -7050; //-7050 worked for my 440lb max scale setup
+//float calibration_factor = 11920; //-7050 worked for my 440lb max scale setup
 //void setup() {
 //    Serial.begin(9600);
 //    Serial.println("HX711 calibration sketch");
@@ -44,8 +44,9 @@ void loop() {
 //void loop() {
 //    scale.set_scale(calibration_factor); //Adjust to this calibration factor
 //    Serial.print("Reading: ");
-//    Serial.print(scale.get_units(), 1);
-//    Serial.print(" lbs"); //Change this to kg and re-adjust the calibration factor if you follow SI units like a sane person
+//    Serial.print(scale.get_units()/2.2, 3);
+//    Serial.println(" kg");
+////    Change this to kg and re-adjust the calibration factor if you follow SI units like a sane person
 //    Serial.print(" calibration_factor: ");
 //    Serial.print(calibration_factor);
 //    Serial.println();
